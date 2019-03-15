@@ -10,12 +10,10 @@ public class MyBroadCastReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
 
-        if(Intent.ACTION_BOOT_COMPLETED.equals(intent.getAction())){
-            Toast.makeText(context,"Boot Completed",Toast.LENGTH_LONG).show();
-        }
-
         if(ConnectivityManager.CONNECTIVITY_ACTION.equals(intent.getAction())){
-            Toast.makeText(context,"Boot Completed",Toast.LENGTH_LONG).show();
+
+            boolean isConnected=intent.getBooleanExtra(ConnectivityManager.EXTRA_NO_CONNECTIVITY,false);
+            Toast.makeText(context,"Network Not Connected :::"+isConnected,Toast.LENGTH_LONG).show();
         }
 
     }
