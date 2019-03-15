@@ -13,7 +13,7 @@ public class BroadCastReceiverExample extends Application {
         super.onCreate();
 
         IntentFilter intentFilter=new IntentFilter();
-        intentFilter.addAction(ConnectivityManager.CONNECTIVITY_ACTION);
+        intentFilter.addAction("com.example.BR_FILTER");
         registerReceiver(myBroadCastReceiver, intentFilter);
     }
 
